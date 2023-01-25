@@ -184,7 +184,16 @@ Now the program must be built to produce an executable. Open a console window an
 > v test.v
 > test.exe
 ```
-
+### Emscripten
+To compile for emscripten, you need to follow a few steps :
+* Download and install Emscripten
+* Compile the Emscripten version of Tilengine
+* Avoid closures in your V program, otherwise it won't work!
+* Download this HTML file : https://github.com/megamarc/Tilengine/blob/html5/samples/shell_minimal.html
+* compile with :
+```sh
+emcc -O1 -I"{Dir_To_Your_Tilengine.h}" -L"{Dir_To_Your_Tilengine_WASM_Lib}" -lz -lpng -lSDL2 -lTilengine --shell-file shell_minimal.html  .\testem.c -o -o {Out_Folder}/out.html --preload-file {Path_To_Your_Assets}
+```
 # Documentation
 Doxygen-based documentation and API reference can be found in the following link:
 http://www.tilengine.org/doc

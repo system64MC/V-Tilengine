@@ -5,7 +5,9 @@ module tilengine
 
 #flag windows -L @VMODROOT/lib/windows
 #flag wasm32_emscripten -L @VMODROOT/lib/wasm
-#flag -lTilengine
+#flag wasm32_emscripten -O3 -L"@VMODROOT/lib/wasm" -lz -lpng -lSDL2 -lTilengine --shell-file "@VMODROOT/shell_minimal.html"
+
+// #flag -lTilengine -lz -lpng -lSDL2 -lTilengine
 
 // [flag]
 pub enum TileFlags {
@@ -453,13 +455,16 @@ pub fn geterrorstring(error EngineError) string {
 	return unsafe {cstring_to_vstring(&char(C.TLN_GetErrorString(error)))}
 }
 
-fn C.TLN_CreateWindow(overlay &char, flags int) bool
-pub fn createwindow(overlay string, flags []WindowFlags) bool {
-	mut f := 0
-	for i in flags {
-		f |= int(i)
-	}
-	return C.TLN_CreateWindow(overlay.str, f)
+pub fn C.TLN_CreateWindow(overlay &char, flags int) bool
+// pub fn createwindow(overlay string, flags []WindowFlags) bool {
+// 	mut f := 0
+// 	for i in flags {
+// 		f |= int(i)
+// 	}
+// 	return C.TLN_CreateWindow(overlay.str, f)
+// }
+pub fn createwindow() bool {
+	return C.TLN_CreateWindow(unsafe {nil}, 0)
 }
 
 fn C.TLN_CreateWindowThread(overlay &char, flags int) bool
