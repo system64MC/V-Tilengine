@@ -1,5 +1,6 @@
 ![Tilengine logo](https://github.com/megamarc/Tilengine/blob/master/Tilengine.png?raw=true)
 # V-Tilengine - V Bindings for Tilengine
+![V_logo](https://vlang.io/img/v-logo.png)
 [![License: MPL 2.0](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)
 [![Build Status](https://travis-ci.org/megamarc/Tilengine.svg?branch=master)](https://travis-ci.org/megamarc/Tilengine)
 
