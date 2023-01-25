@@ -3,7 +3,8 @@ module tilengine
 #flag -I @VMODROOT/includes
 #include "Tilengine.h"
 
-#flag -L @VMODROOT/lib
+#flag windows -L @VMODROOT/lib/windows
+#flag wasm32_emscripten -L @VMODROOT/lib/wasm
 #flag -lTilengine
 
 // [flag]

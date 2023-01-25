@@ -55,7 +55,7 @@ The recommended way to get prebuilt binaries ready to install, run and test samp
 
 ## Build from source
 You can also build the library from source. Tilengine requires `SDL2` and `libpng` to build, you must provide these libraries yourself depending on your target platform.
-
+You can find the source code here : https://github.com/megamarc/Tilengine
 ### Windows
 You must provide development libraries:
 * SDL: https://www.libsdl.org/download-2.0.php
@@ -77,6 +77,15 @@ Just install standard packages `libpng-dev` and `libsdl2-dev`
 ### MacOS
 
 Tilengine depends on having SDL2 in Framework format installed on your system. Homebrew port won't work. Download the latest dmg here: https://github.com/libsdl-org/SDL/releases.
+
+# Installing the library
+First, you need to build the library from source. See the previous point
+for more information.
+### Windows
+Just put the DLL you compiled into the same directory as your executable.
+
+### Linux
+Execute the install script from the Tilengine repository as administrator.
 
 # The tilengine window
 The following actions can be done in the created window:
